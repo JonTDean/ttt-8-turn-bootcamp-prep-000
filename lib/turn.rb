@@ -59,10 +59,10 @@ def turn(board)
   # Grab User Input 
   userInput = gets.strip
 
-  if valid_move?(board, input_to_index(userInput))
+  if valid_move?(board, input_to_index(userInput)
     return move(board, input_to_index(userInput), token='X')
   else
-    return input_to_index(userInput)
+    return turn(board)
   end
 
 end
