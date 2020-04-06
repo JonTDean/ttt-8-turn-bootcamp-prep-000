@@ -50,7 +50,7 @@ end
 
 # Place x or o based on input
 def move(array, index, token='X')
-  return array.map{ |x| array[index]= token}
+  return array.map{ |x| array[index] = token}
 end
 
 # Asks for input, gets, then converts
