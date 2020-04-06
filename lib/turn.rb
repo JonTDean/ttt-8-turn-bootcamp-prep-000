@@ -62,7 +62,7 @@ def turn(board)
   if valid_move?(board, input_to_index(userInput)
     return move(board, input_to_index(userInput), token='X')
   else
-    return turn(board)
+    return input_to_index(userInput)
   end
 
 end
