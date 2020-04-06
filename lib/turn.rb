@@ -25,7 +25,7 @@ end
 # Checks if the index is within range of 0-8 and has either O or X
 def valid_move?(board, index)
   if (0..8) === index
-    if position_taken?(board, index)
+    if board[index] === "O" || board[index] === "X"
       return false
     else
       return true
@@ -38,20 +38,19 @@ end
 # Checks if the index in the array is occupied
 def position_taken?(board, index)
   if board[index] == 'X'
-    return true
+    return "Area is occupied by X"
   elsif board[index] == 'O'
-    return true
+    return "Area is occupied by O"
   elsif board[index] == ' '
-    return false
+    return "Area is free to use"
   else
-    return false
+    return "INVALID"
   end
 end
 
 # Place x or o based on input
 def move(array, index, token='X')
-  array[index] << token
-  return array
+  return array.map{ |x| array[index]= token}
 end
 
 # Asks for input, gets, then converts
@@ -59,12 +58,9 @@ def turn(board)
   puts "Please enter 1-9:"
   # Grab User Input 
   userInput = gets.strip
-
-  if valid_move?(board, input_to_index(userInput))
-    return move(board, input_to_index(userInput), token='X')
-  else
-    return input_to_index(userInput)
-  end
+  
+  return move(board, input_to_index(userInput), token='X')
+end
 
 end
 
