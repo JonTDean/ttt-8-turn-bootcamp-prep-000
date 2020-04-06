@@ -62,5 +62,4 @@ def turn(board)
   return move(board, input_to_index(userInput), token='X')
 end
 
-end
 
