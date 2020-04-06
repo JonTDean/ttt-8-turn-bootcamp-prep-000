@@ -58,8 +58,13 @@ def turn(board)
   puts "Please enter 1-9:"
   # Grab User Input 
   userInput = gets.strip
-  
-  return move(board, input_to_index(userInput), token='X')
+
+  if valid_move?(board, input_to_index(userInput))
+    return move(board, input_to_index(userInput), token='X')
+  else
+    return input_to_index(userInput)
+  end
+
 end
 
 
