@@ -64,7 +64,6 @@ def turn(board)
   else
     return turn(board)
   end
-
 end
 
 
