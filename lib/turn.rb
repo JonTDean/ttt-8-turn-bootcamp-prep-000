@@ -65,6 +65,5 @@ def turn(board)
   else
     return input_to_index(userInput)
   end
-
 end
 
